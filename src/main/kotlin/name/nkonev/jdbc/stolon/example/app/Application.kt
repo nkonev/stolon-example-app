@@ -1,4 +1,4 @@
-package name.nkonev.jdbc.repository
+package name.nkonev.jdbc.stolon.example.app
 
 import org.slf4j.LoggerFactory
 import org.springframework.boot.autoconfigure.SpringBootApplication
@@ -29,10 +29,11 @@ class AppController(private val testEntityRepository: TestEntityRepository) {
 
 @Component
 class PeriodicPrinter(private val testEntityRepository: TestEntityRepository) {
-	val logger = LoggerFactory.getLogger(this::class.java)
+	private val logger = LoggerFactory.getLogger(this::class.java)
 
 	@Scheduled(cron = "* * * * * *")
 	fun print() {
+		logger.info("Executed cron task")
 		testEntityRepository.findAll().forEach { testEntity -> logger.info("Row {}", testEntity) }
 	}
 }

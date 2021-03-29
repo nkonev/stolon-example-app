@@ -1,1 +1,1 @@
-rootProject.name = "jdbc-repository-jsonb"
+rootProject.name = "stolon-example-app"

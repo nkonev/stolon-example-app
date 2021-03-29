@@ -1,4 +1,4 @@
-package name.nkonev.jdbc.repository.repo
+package name.nkonev.jdbc.stolon.example.app
 
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest
